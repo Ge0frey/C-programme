@@ -1,3 +1,2 @@
-# hello: hello.c
-#     cc hello.c -lcs50 -o hello
-
+conditionals: conditionals.c
+	clang -o conditionals conditionals.c -lcs50

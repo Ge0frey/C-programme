@@ -11,10 +11,10 @@ int main(void)
 
 int get_negative_int(void)
 {
-    int n;
+    int int;
     do
     {
         n = get_int("Enter negative value: ");
-    } while (n < 0);
+    } while (n > 0);
     return n;
 }

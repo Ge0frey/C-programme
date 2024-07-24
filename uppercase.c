@@ -2,14 +2,18 @@
 #include <cs50.h>
 #include <string.h>
 
-int main (void) {
+int main(void)
+{
     string uppercase = get_string("Before: ");
     printf("After:  ");
-    for (int i = 0; i < strlen(uppercase); i++) {
+    for (int i = 0; i < strlen(uppercase); i++)
+    {
         if (uppercase[i] >= 'a' && uppercase[i] <= 'z')
         {
             printf("%c", uppercase[i] - 32);
-        } else {
+        }
+        else
+        {
             printf("%c", uppercase[i]);
         }
     }

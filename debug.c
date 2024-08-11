@@ -11,7 +11,7 @@ int main(void)
 
 int get_negative_int(void)
 {
-    int int;
+    int n;
     do
     {
         n = get_int("Enter negative value: ");

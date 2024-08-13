@@ -8,7 +8,9 @@ int main(void)
 
     string s = get_string("Enter city name: \n");
 
-    for (int i = 0; i < 7; i++)
+    int n = 7;
+
+    for (int i = 0; i < n; i++)
     {
         if (strcmp(strings[i], s) == 0)
         {

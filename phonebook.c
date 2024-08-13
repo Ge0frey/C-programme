@@ -21,7 +21,9 @@ int main(void)
 
     string contact = get_string("Enter name: ");
 
-    for (int i = 0; i < 2; i++)
+    int n = 2;
+
+    for (int i = 0; i < n; i++)
     {
         if (strcmp(people[i].names, contact) == 0)
         {

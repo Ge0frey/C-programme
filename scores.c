@@ -5,7 +5,6 @@ float average(int array[]);
 
 const int n = 4;
 
-
 int main(void)
 {
     int scores[n];
@@ -20,8 +19,9 @@ int main(void)
 float average(int array[])
 {
     int sum = 0;
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         sum += array[i];
     }
-    return sum / (float) n ;
+    return sum / (float)n;
 }

@@ -2,12 +2,11 @@
 #include <cs50.h>
 #include <string.h>
 
-typedef struct 
+typedef struct
 {
     string names;
     string numbers;
-}
-person;
+} person;
 
 int main(void)
 {

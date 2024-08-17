@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    //get size of brick
+    // get size of brick
     int n;
 
     do
@@ -11,7 +11,7 @@ int main(void)
         n = get_int("What is the size of the block? ");
     } while (n < 1);
 
-    //print grid of bricks
+    // print grid of bricks
     for (int i = 0; i < n; i++)
     {
         printf("i is %i\n", i);

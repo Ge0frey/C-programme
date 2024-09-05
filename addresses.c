@@ -1,16 +1,13 @@
 #include <stdio.h>
 #include <cs50.h>
 
-string s = "Hi";
-
-string * ps = &s; 
-
 
 int main () 
 {
-    int n = 60;
-    int * p = &n;
-    printf("pointer of n variable: %p\n", p);
-    printf ("String pointer: %p\n%p\n", ps, ps[0]);
-    return 0;
+    char * s = "Hi"; //A string is basically a pointer to a character
+    string * ps = &s; 
+
+    printf("String pointer: %p\n", s);  //Will print the string pointer
+    printf ("First character pointer: %p\n", ps[0]);  //Will print the first character of our string
+    return 0; //Will terminate our operation
 }

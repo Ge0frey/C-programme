@@ -1,17 +1,24 @@
 #include <stdio.h>
+#include <cs50.h>
+#include <string.h>
 
-int main () {
-    int i;
-    int j;
+int main()
+{
 
-    printf("Enter number: ");
-    scanf("%d", &i);
-    printf("Enter number: ");
-    scanf("%d", &j);
+    typedef char *string;
 
-    if (i == j) {
+    string i = get_string("Enter string: ");
+    string j = get_string("Enter string: ");
+
+    if (strcmp(i,j) == 0)
+    {
         printf("Same\n");
-    } else {
+    }
+    else
+    {
         printf("Different\n");
     }
+
+    printf("%p\n", &i);
+    printf("%p\n", &j);
 }

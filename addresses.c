@@ -1,12 +1,14 @@
 #include <stdio.h>
 
-int main () 
+int main()
 {
-    typedef char * string; //I have created a datatype called string which essentially is char *
-    char * s = "Hi"; //A string is basically a pointer to a character
-    string * ps = &s; 
+    typedef char *string; // I have created a datatype called string which essentially is char *
+    string s = "Hi!";       // A string is basically a pointer to a character
 
-    printf("String pointer: %s\n", s);  //Will print the string pointer
-    printf ("First character pointer: %p\n", ps[0]);  //Will print the first character of our string
-    return 0; //Will terminate our operation
+    printf("String pointer: %p\n", s);              // Will print the string pointer
+    printf("First character pointer: %p\n", &s[0]); // Will print the first character of our string
+    printf("Second character pointer: %p\n", &s[1]); // Will print the second character of our string
+    printf("Third character pointer: %p\n", &s[2]); // Will print the third character of our string
+    printf("Null character pointer: %p\n", &s[3]); // Will print the null escape pointer of our string
+    return 0;                                       // Will terminate our operation
 }

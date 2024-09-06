@@ -1,9 +1,13 @@
 #include <stdio.h>
-#include <cs50.h>
 
 int main () {
-    int i = get_int("Enter number: ");
-    int j = get_int("Enter number: ");
+    int i;
+    int j;
+
+    printf("Enter number: ");
+    scanf("%d", &i);
+    printf("Enter number: ");
+    scanf("%d", &j);
 
     if (i == j) {
         printf("Same\n");

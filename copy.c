@@ -1,20 +1,26 @@
 #include <stdio.h>
 #include <cs50.h>
 #include <string.h>
+#include <stdlib.h>
 #include <ctype.h>
 
-int main () {
+int main()
+{
 
     typedef char *string;
 
     string s = get_string("Enter string: ");
-    string t = s;
+    string t = malloc(strlen(s) + 1);
 
-    if(strlen(t) > 0) {
-        t[0] = toupper(t[0]);
+    for (int i = 0; i < strlen(s) + 1; i++)
+    {
+        t[i] = s[i];
+        if (strlen(t) > 0)
+        {
+            t[0] = toupper(t[0]);
+        }
     }
 
-    printf("%p\n", s);
-    printf("%p\n", t);
-
+    printf("%s\n", s);
+    printf("%s\n", t);
 }

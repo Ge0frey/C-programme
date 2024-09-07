@@ -12,13 +12,11 @@ int main()
     string s = get_string("Enter string: ");
     string t = malloc(strlen(s) + 1);
 
-    for (int i = 0, n = strlen(s) + 1; i < n; i++)
+    strcpy(t,s);
+
+    if (strlen(t) > 0)
     {
-        t[i] = s[i];
-        if (strlen(t) > 0)
-        {
-            t[0] = toupper(t[0]);
-        }
+        t[0] = toupper(t[0]);
     }
 
     printf("%s\n", s);

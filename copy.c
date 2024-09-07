@@ -12,7 +12,7 @@ int main()
     string s = get_string("Enter string: ");
     string t = malloc(strlen(s) + 1);
 
-    for (int i = 0; i < strlen(s) + 1; i++)
+    for (int i = 0, n = strlen(s) + 1; i < n; i++)
     {
         t[i] = s[i];
         if (strlen(t) > 0)

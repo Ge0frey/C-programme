@@ -10,9 +10,17 @@ int main()
     typedef char *string;
 
     string s = get_string("Enter string: ");
+    if (s == NULL)
+    {
+        return 1;
+    }
     string t = malloc(strlen(s) + 1);
+    if (t == NULL)
+    {
+        return 1;
+    }
 
-    strcpy(t,s);
+    strcpy(t, s);
 
     if (strlen(t) > 0)
     {
@@ -21,4 +29,6 @@ int main()
 
     printf("%s\n", s);
     printf("%s\n", t);
+
+    return 0;
 }

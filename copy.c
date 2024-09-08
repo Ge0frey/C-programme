@@ -30,5 +30,7 @@ int main()
     printf("%s\n", s);
     printf("%s\n", t);
 
+    free(t);
+
     return 0;
 }

@@ -10,7 +10,7 @@ int main()
     string i = get_string("Enter string: ");
     string j = get_string("Enter string: ");
 
-    if (strcmp(i,j) == 0)
+    if (strcmp(i, j) == 0)
     {
         printf("Same\n");
     }

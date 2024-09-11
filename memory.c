@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main (void) {
+int main(void)
+{
     int *x = malloc(3 * sizeof(int));
-    if (x == NULL) {
+    if (x == NULL)
+    {
         return 1;
     }
     x[0] = 72;
@@ -12,5 +14,4 @@ int main (void) {
 
     free(x);
     return 0;
-
 }

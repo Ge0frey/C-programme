@@ -14,6 +14,6 @@ int main(void)
     int y = 2; // initializing the vaue of y
 
     printf("x is %i, y is %i\n", x, y); // printing before swap
-    swap(&x, &y);                         // Calling the swap function passing x and y as arguments to the function
+    swap(&x, &y);                       // Calling the swap function passing x and y as arguments to the function
     printf("x is %i, y is %i\n", x, y); // printing after swap
 }

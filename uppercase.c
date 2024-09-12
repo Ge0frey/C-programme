@@ -6,7 +6,8 @@ int main(void)
 {
     string uppercase = get_string("Before: ");
     printf("After:  ");
-    for (int i = 0; i < strlen(uppercase); i++)
+    int i;
+    for (i = 0; i < strlen(uppercase); i++)
     {
         if (uppercase[i] >= 'a' && uppercase[i] <= 'z')
         {

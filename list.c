@@ -1,15 +1,16 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
-    int list[3];
+    int *list = malloc(3 * sizeof(int));
 
     list[0] = 1;
     list[1] = 2;
     list[2] = 3;
 
     int i;
-    for (i = 0; i < 3; i++)
+    for (i = 0; i < sizeof(int); i++)
     {
         printf("%i\n", list[i]);
     }

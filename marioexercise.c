@@ -10,10 +10,13 @@ int main(void)
     } while (height < 1);
     for (int row = 0; row < height; row++)
     {
-        printf("%i", row);
-        for (int column = 0; column < height; column++)
+        for (int column = 0; column < height - row - 1; column++)
         {
-            printf("%i", column); 
+            printf(" ");
+        }
+        for (int hash = 0; hash <= row; hash++)
+        {
+            printf("#");
         }
         printf("\n");
     }

@@ -14,8 +14,9 @@ int main()
     list[1] = 2;
     list[2] = 3;
 
+    int n = 4;
 
-    int *tmp = realloc(list, 4 * sizeof(int));
+    int *tmp = realloc(list, n * sizeof(int));
 
     if (tmp == NULL)
     {
@@ -27,7 +28,7 @@ int main()
 
     list[3] = 4;
 
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < n; i++)
     {
         printf("%i\n", list[i]);
     }

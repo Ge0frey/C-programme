@@ -9,59 +9,69 @@ typedef struct {
 } MinHeap;
 
 // Function prototypes
-void swap(int *x, int *y);
 void insert(MinHeap *heap, int element);
 void heapifyUp(MinHeap *heap, int index);
 void heapifyDown(MinHeap *heap, int index);
 int extractMin(MinHeap *heap);
-void printHeap(MinHeap *heap);
-
-// Swap function
-void swap(int *x, int *y) {
-    int temp = *x;
-    *x = *y;
-    *y = temp;
-}
+void printHeap(const MinHeap *heap);
 
 // Insert an element into the heap
 void insert(MinHeap *heap, int element) {
-    if (heap->size == MAX_HEAP_SIZE) {
+    if (heap->size >= MAX_HEAP_SIZE) {
         printf("Heap overflow\n");
         return;
     }
-
+    
     heap->arr[heap->size] = element;
+    heapifyUp(heap, heap->size);
     heap->size++;
-    heapifyUp(heap, heap->size - 1);
 }
 
-// Heapify up to maintain the min-heap property
+// Heapify up to maintain the min-heap property (iterative)
 void heapifyUp(MinHeap *heap, int index) {
-    int parentIndex = (index - 1) / 2;
+    while (index > 0) {
+        int parentIndex = (index - 1) / 2;
+        
+        if (heap->arr[index] >= heap->arr[parentIndex]) {
+            break;
+        }
+        
+        // Inline swap
+        int temp = heap->arr[index];
+        heap->arr[index] = heap->arr[parentIndex];
+        heap->arr[parentIndex] = temp;
 
-    if (index > 0 && heap->arr[index] < heap->arr[parentIndex]) {
-        swap(&heap->arr[index], &heap->arr[parentIndex]);
-        heapifyUp(heap, parentIndex);
+        index = parentIndex;
     }
 }
 
-// Heapify down to maintain the min-heap property
+// Heapify down to maintain the min-heap property (iterative)
 void heapifyDown(MinHeap *heap, int index) {
-    int leftChild = 2 * index + 1;
-    int rightChild = 2 * index + 2;
-    int smallest = index;
+    int leftChild, rightChild, smallest;
 
-    if (leftChild < heap->size && heap->arr[leftChild] < heap->arr[smallest]) {
-        smallest = leftChild;
-    }
+    while (1) {
+        leftChild = 2 * index + 1;
+        rightChild = 2 * index + 2;
+        smallest = index;
 
-    if (rightChild < heap->size && heap->arr[rightChild] < heap->arr[smallest]) {
-        smallest = rightChild;
-    }
+        if (leftChild < heap->size && heap->arr[leftChild] < heap->arr[smallest]) {
+            smallest = leftChild;
+        }
 
-    if (smallest != index) {
-        swap(&heap->arr[index], &heap->arr[smallest]);
-        heapifyDown(heap, smallest);
+        if (rightChild < heap->size && heap->arr[rightChild] < heap->arr[smallest]) {
+            smallest = rightChild;
+        }
+
+        if (smallest == index) {
+            break;
+        }
+
+        // Inline swap
+        int temp = heap->arr[index];
+        heap->arr[index] = heap->arr[smallest];
+        heap->arr[smallest] = temp;
+
+        index = smallest;
     }
 }
 
@@ -81,7 +91,7 @@ int extractMin(MinHeap *heap) {
 }
 
 // Print the heap
-void printHeap(MinHeap *heap) {
+void printHeap(const MinHeap *heap) {
     for (int i = 0; i < heap->size; i++) {
         printf("%d ", heap->arr[i]);
     }
@@ -89,8 +99,7 @@ void printHeap(MinHeap *heap) {
 }
 
 int main() {
-    MinHeap heap;
-    heap.size = 0;
+    MinHeap heap = {0};  // Initialize heap with size = 0
 
     insert(&heap, 3);
     insert(&heap, 1);

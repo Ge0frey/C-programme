@@ -57,7 +57,8 @@ int main() {
     initArray(&arr);  // Initialize the array
 
     // Insert elements dynamically
-    for (int i = 1; i <= 10; i++) {
+    int n = 4;
+    for (int i = 1; i <= n; i++) {
         insertElement(&arr, i);
     }
 

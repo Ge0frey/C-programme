@@ -1,0 +1,9 @@
+# Ignore all executables (assuming no extension)
+a.out
+*.out
+*.exe
+
+
+.vscode
+
+libcs50-main

@@ -25,3 +25,5 @@ int main(void) {
     printf("%d\n", *arrptr);
     printf("%d\n", x);
 }
+
+//& finds where something is, * reads what's there.
